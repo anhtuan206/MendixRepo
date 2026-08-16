@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        /*function myredirect() {
+            var myhash = window.location.hash.substring(1); //remove # at the beginning
+            console.log(window.location.hash);
+           // var myctx = $.urlParam("ctx");
+            window.location.replace("/oauth/v2/callback?" + myhash);
+            
+        }*/
+        function redirect() {
+            const fragment = window.location.hash.substring(1); //remove # at the beginning
+            const tokens = ['access_token', 'token_type', 'expires_in', 'state'];
+            const headers = parseFragment(fragment, tokens);
+			const urlParams = new URLSearchParams(window.location.search);
+			const origin = urlParams.get('origin');
+
+			const callBackRequest = fetch( "./auth/v1/callback?origin=" + origin, {
+				method: "POST", // *GET, POST, PUT, DELETE, etc.
+				headers: tokens.slice(1).reduce((headersToPass, token) => {
+					headersToPass[token] = headers.get(token);
+					return headersToPass;
+				}, {"Authorization": "Bearer " + headers.get('access_token')})
+			  });
+			callBackRequest.then((result) => {
+				if (result.redirected){
+					window.location.replace(result.url); 
+				}
+				else result.text().then((responseText) => window.location.replace(responseText));
+			}, (error) => {
+				console.log(error);
+			});
+        }
+
+        function parseFragment(fragment, tokens) {
+
+            const at = '&';
+            const eq = '=';
+            const headers = new Map();
+
+            for (let token of tokens) {
+                startIndex = fragment.indexOf(token);
+                endIndex = fragment.indexOf(at, startIndex + 1);
+                let t = fragment.slice(startIndex, endIndex != -1 ? endIndex : undefined);
+
+                headers.set(token, t.slice(t.indexOf(eq) + 1))
+            }
+
+            return headers;
+        }
+    </script>
+</head>
+
+<body onload="redirect()"></body>
+
+</html>

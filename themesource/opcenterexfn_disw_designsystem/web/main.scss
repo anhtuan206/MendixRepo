@@ -1,0 +1,66 @@
+@import "_loginpage";
+@import "../web/common";
+//-----------------------------Layouts---------------------------------
+@import "../web/_layouts/layouts";
+@import "../web/_layouts/home";
+@import "../web/widgets/buttons";
+@import "../web/widgets/popups";
+@import "../web/widgets/inputs";
+@import "../web/widgets/command-bar";
+@import "../web/widgets/data-grid";
+@import "../web/widgets/tab";
+@import "../web/widgets/side-panel";
+@import "../web/widgets/navigation";
+@import "../web/widgets/breadcrumb";
+@import "../web/widgets/dropdown";
+@import "../web/widgets/gallery";
+//----------------------------------Gantt--------------------------------------
+@import "../web/widgets/gantt/generic";
+@import "../web/widgets/gantt/gantt";
+@import "../web/widgets/gantt/canvas";
+@import "../web/widgets/gantt/canvas-column-lines";
+@import "../web/widgets/gantt/canvas-foreground";
+@import "../web/widgets/gantt/canvas-overlay";
+@import "../web/widgets/gantt/events";
+@import "../web/widgets/gantt/grid";
+@import "../web/widgets/gantt/grid-splitter";
+@import "../web/widgets/gantt/grid-virtual-scrollers";
+@import "../web/widgets/gantt/header";
+@import "../web/widgets/gantt/header-timeaxis";
+@import "../web/widgets/gantt/widget";
+@import "../web/widgets/gantt/columns";
+@import "../web/widgets/gantt/tooltips";
+@import "../web/widgets/gantt/skills";
+@import "../web/widgets/gantt/badges";
+@import "../web/widgets/gantt/column-operation";
+@import "../web/widgets/gantt/column-time";
+//-----------------------------Building Blocks---------------------------------
+@import "../web/buildingblocks/headerbar/headerbar";
+@import "../web/buildingblocks/tile/tile";
+@import "../web/buildingblocks/nesteddatacard/_nesteddatacard";
+@import "../web/buildingblocks/tag/tag";
+@import "../web/buildingblocks/commandBar/commandBar";
+@import "../web/buildingblocks/contextualMenu/contextualMenu";
+@import "../web/buildingblocks/inputValidation/input-validation";
+//-----------------------------Document Viewer---------------------------------
+@import 'components/documentViewer/document-viewer.scss';
+//-----------------------------Work Instruction--------------------------------
+@import "components/workInstruction/work-instruction.scss";
+//-----------------------------Quality Inspection------------------------------
+@import "components/qualityInspection/quality-inspection.scss";
+//------------------------Production Coordinator Dashboard---------------------
+@import "components/productionCoordinatorDashboard/pcd.scss";
+//-------------------------------Work Order Network----------------------------
+@import "components/workOrderNetwork/work-order-network.scss";
+//-------------------------------------Graph-----------------------------------
+@import "components/graph/graph.scss";
+//---------------------------------SPC Evaluation------------------------------
+@import "components/spcEvaluation/spcEvaluation.scss";
+
+.rotate-360 {
+    animation: spin 1s linear infinite;
+    
+    &.centered{
+        margin: auto;
+    }
+}

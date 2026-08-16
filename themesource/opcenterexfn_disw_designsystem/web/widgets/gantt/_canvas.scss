@@ -1,0 +1,9 @@
+.s-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  height: 100%;
+  overflow: hidden;
+  overflow: clip;
+  contain: strict;
+}

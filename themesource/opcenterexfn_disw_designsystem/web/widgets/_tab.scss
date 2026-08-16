@@ -1,0 +1,68 @@
+.exfn-tabs, .tab-container {
+    padding: 0;
+    .mx-tabcontainer-tabs {
+        ul {
+            text-align: left;
+            font: normal normal 600 14px/20px Segoe UI;
+            letter-spacing: 0px;
+            color: #0F789B;
+            opacity: 1;
+        }
+        li {
+            font-weight: 600;
+            padding: 0 0 0 16px;
+            height: 28px;
+            a {
+                font-size: 14.4px;
+                padding: 0px 0 4px 0px;
+                border-bottom: 2px solid transparent;
+            }
+        }
+        
+        li.active a,
+        li.active a:focus,
+        li.active a:hover { 
+            border: none;
+            border-bottom: 2px solid;
+            background-color: #fff;
+            cursor: pointer;
+            outline: none;
+            color: #0F789B;
+        }
+
+        li a:focus,
+        li a:hover  {
+            border: none;
+            border-bottom: 2px transparent;
+            background-color: #fff;
+            cursor: pointer;
+            outline: none;
+            color: #0F789B;
+        }
+    }
+    
+    .mx-tabcontainer-content {
+        margin-top: 16px;
+        .table-content {
+            width: 100%;
+            .tab-pane {
+                div.spacing-outer-top, div.spacing-outer-left, div.spacing-outer-right {
+                    margin-left: 0 !important;
+                    margin-top: 0 !important;
+                    margin-right: 0 !important;
+                }
+            }
+        }
+    }
+    .mx-groupbox-body {
+        text-align: left;
+        .form-group {
+            label {
+                text-align: left;
+            }
+        }
+    }
+    .d-graph__breadcrumbs {
+        padding: 0 10px 10px 0;
+    }
+}

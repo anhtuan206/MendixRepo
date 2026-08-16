@@ -1,0 +1,66 @@
+@import '../../../../../theme/web/custom-variables';
+
+.contextualMenu {
+    width: $exfn-contextualMenu-width !important;
+    //min-height: 166px;
+    position: fixed;
+    z-index: 999;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+
+    .widget-gallery-items {
+        overflow-x: hidden;
+
+        .widget-gallery-item {
+            width: $exfn-contextualMenu-width !important;
+            text-align: center;
+            padding-left: 5px;
+            padding-right: 5px;
+            
+
+            .itemContainer {
+                display: flex;
+                align-items: center;
+                width: 100%;
+            }
+
+            .icon {              
+                width: 24px;
+                height: 24px;
+                
+                margin-right: 5px;
+
+                &.selected {
+                    background: #CDE6EB 0% 0% no-repeat padding-box;
+                    border: 1px solid #66C8DE;
+                    opacity: 1;
+                }
+
+                img {
+                    width: 16px;
+                    height: 16px;
+                    @include vertical-center;
+                }
+            }
+
+            span {
+                font: normal normal normal 12px/16px Segoe UI;
+                letter-spacing: 0px;
+                color: #1E1E1E;
+                opacity: 1;
+            }
+        }
+    }
+
+    &.invisible {
+        visibility: hidden;
+        border: 0px;
+    }
+
+    &.visible {
+        visibility: visible;
+        box-shadow: 0px 3px 6px #0000004D;
+        border: 1px solid #DCDCDC;
+        border-radius: 3px;
+        opacity: 1;
+    }
+}

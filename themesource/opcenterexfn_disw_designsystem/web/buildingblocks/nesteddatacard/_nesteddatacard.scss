@@ -1,0 +1,252 @@
+@import '../../../../../theme/web/custom-variables';
+
+/* SPECIFICATION ACCORDION */
+.exds-specification-accordion {
+    margin-left: 16px;
+    margin-bottom: 8px;
+
+    .widget-accordion-group-header-button {
+        min-height: 40px;
+    }
+
+    .widget-accordion-group-header-button-icon {
+        font-size: 16px;
+    }
+    p, span, h5, h6, .h5, .h6, input, span, a {
+        font-size: $exfn-normal-font-size;
+        margin-bottom: 2px;
+    }
+    a {
+        font-weight: $exfn-semibold;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    .alert {
+        text-align: left;
+    }
+    img {
+        max-width: 100%;
+    }
+    .widget-accordion-group { 
+        border-bottom: none;
+    }
+
+    /* MAIN ACCORDION BACKGROUND AND BORDER COLOR */
+    &.green-background .widget-accordion-group {
+        background-color: $exfn-specification-completed-background-color;
+    }
+
+    &.green-background > .widget-accordion-group > .widget-accordion-group-header > div.widget-accordion-group-header-button.widget-accordion-group-header-button-clickable {
+        background-color: $exfn-specification-completed-background-color;
+    }
+
+    &.yellow-background .widget-accordion-group {
+        background-color: $exfn-specification-partial-background-color;     
+    }
+
+    &.yellow-background > .widget-accordion-group > .widget-accordion-group-header > div.widget-accordion-group-header-button.widget-accordion-group-header-button-clickable {
+        background-color: $exfn-specification-partial-background-color;
+    }       
+
+    &.green-border {
+        border-left: $exfn-specification-border-thickness solid $exfn-specification-completed-border-color;
+    }
+
+    &.yellow-border {
+        border-left: $exfn-specification-border-thickness solid $exfn-specification-partial-border-color;
+    }
+
+    &.blue-border {
+        border-left: $exfn-specification-border-thickness solid $exfn-specification-initial-border-color;
+    } 
+
+    /* ACCORDION HEADER */
+    .widget-accordion-group-header {
+        .accordion-header-content {
+            padding: 10px 16px 10px 16px;
+
+            h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+                display: inline-block;
+                margin: 0;
+                padding-left: 10px;
+                padding-right: 5px;
+                font-weight: 400;
+            }
+            .accordion-header-type-image {
+                padding-right: 0;
+                padding-left: 8px;
+                display: flex;
+                align-items: center;
+                img {
+                    height: 24px;
+                    width: 24px;
+                    margin-top: -2px;
+                }
+            }
+            .accordion-header-text {
+                padding-left: 0;
+                > div {
+                    display: inline-block;
+                }
+            }
+            .accordion-header-status-image {
+                img {
+                    height: 16px;
+                    width: 16px;
+                    margin-top: 5px;
+                }
+            }
+            span {
+                font-weight: 600;
+            }
+        }
+    }
+
+    /* ACCORDION AREA - SINGLE SPECIFICATION ITEM CONTENT */
+    .accordion-area {
+        overflow: hidden;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        .form-group {
+            margin-bottom: 0;
+        }
+        &.green-background {
+            background-color: $exfn-specification-completed-background-color;
+        }
+        &.yellow-background {
+            background-color: $exfn-specification-partial-background-color;          
+
+        }
+        &.white-background {
+            background-color: $exfn-specification-initil-background-color;
+            input {
+                background-color: white;;
+            }
+        }
+
+        /* HEADER - SINGLE SPECIFICATION ITEM */
+        .accordion-area-header {
+            margin: 0;
+            padding-left: 10px;
+            padding-right: 0;
+            h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+                display: inline-block;
+                margin: 0;
+                padding-left: 10px;
+                padding-right: 5px;
+                font-weight: 400;
+            }
+            img {
+                height: 32px;
+                width: 32px;
+            }
+            span {
+                font-weight: 600;
+            }
+            > div.row {
+                margin: 0;
+                > div {
+                    padding-left: 12px;
+                }
+            }
+        }
+
+        /* NEW ITEM INPUT AREA - SINGLE SPECIFICATION ITEM */
+        .accordion-area-new-item-input {
+            padding: 10px 16px 10px 32px;
+            .command-btn {
+                text-align: right;
+                padding-left: 0;
+                padding-right: 0;
+
+                button {
+                    margin-top: 0;
+                }
+            }
+            .entity-picker {
+                button {
+                    height: 36px;
+                    width: 40px;
+                    padding: 0;
+                    background: transparent;
+                    border: none;
+                    margin-top: -59px;
+                    margin-left: calc(100% - 40px);
+                }
+            }
+        }
+
+        /* HISTORY: LOAD PREVIOUS USAGES - SINGLE SPECIFICATION ITEM */
+        .accordion-area-history {
+            padding-top: 8px;
+            padding-left: 16px;
+            .no-columns input[disabled], 
+            .form-control.disabled {
+                border: none;
+                height: 32px;   
+                border-color: $form-input-disabled-color;
+                background-color: $form-input-bg-disabled;
+                padding-top:7px;
+                padding-bottom:7px;
+            }
+            .history-btn {
+                text-align: center;
+                img {
+                    height: 16px;
+                    width: 16px;
+                    margin-right: 4px;
+                    filter: invert(16%) sepia(69%) saturate(3982%) hue-rotate(183deg) brightness(97%) contrast(101%);
+                }
+                a {
+                    padding-top: 2px;
+                    padding-bottom: 2px;
+                }
+            }  
+        }
+    }
+    .widget-gallery .widget-gallery-items {
+        grid-gap: 0;
+        padding: 0;
+    } 
+    input {
+        padding-top:6px;
+        padding-bottom:6px;
+        border: 1px solid $exfn-input-border-color;
+    }
+    .form-control:focus {
+        border-color: $exfn-input-focus-border-color;
+        border: 2px solid $exfn-input-focus-border-color;
+    }
+    .float-right-command-btn {
+        height: 40px;
+        width: 100%;
+        text-align: right;
+
+        button {
+            margin: 4px 8px 4px 4px;
+        }
+    }
+    .exds-operationContainer-buttons {
+        height: 32px;
+        width: 32px;
+        margin: 4px 8px 4px 4px;
+        padding: 0px;
+        img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 2px;
+            filter: invert(49%) sepia(97%) saturate(350%) hue-rotate(150deg) brightness(86%) contrast(85%);
+        }
+        &.disabled {
+            img {
+                filter: invert(55%) sepia(0%) saturate(0%) hue-rotate(158deg) brightness(94%) contrast(82%);;
+            }
+        }
+        &.disabled:hover,
+        &.disabled:active {
+            filter: none;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.s-column-lines-canvas {
+  z-index: 3;
+}
+
+.s-column-line {
+  height: 100%;
+  position: absolute;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-color: var(--grid-column-border-color);
+}

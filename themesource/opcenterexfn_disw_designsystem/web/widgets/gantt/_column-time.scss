@@ -1,0 +1,43 @@
+.s-col-start,
+.s-col-end {
+  flex-basis: 130px;
+  min-width: 130px;
+  max-width: 200px;
+}
+
+.s-col-date-column {
+  flex: 2;
+  flex-direction: column;
+  padding: 0;
+  flex-basis: 260px;
+  min-width: 260px;
+  max-width: 400px;
+}
+
+.s-cell-estimated-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 100%;
+  border-bottom: 1px solid var(--grid-column-border-color)
+}
+
+.s-dates-cell {
+  display: flex;
+  flex: 3;
+  width: 100%;
+
+  .s-date-cell:first-child {
+    border-right: 1px solid var(--grid-column-border-color)
+  }
+}
+
+.s-date-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}

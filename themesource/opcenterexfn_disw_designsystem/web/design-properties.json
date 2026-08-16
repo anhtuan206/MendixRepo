@@ -1,0 +1,50 @@
+{
+    "com.mendix.widget.web.gallery.Gallery": [
+        {
+            "name": "Hide paging",
+            "type": "Toggle",
+            "description": "Hides the paging",
+            "class": "hide-paging"
+        }
+    ],
+    "TextBox": [
+        {
+            "name": "Show Required Indicator",
+            "type": "Toggle",
+            "description": "Is the field required?",
+            "class": "exfn-form-input-required"
+        }
+    ],
+    "DropDown": [
+        {
+            "name": "Show Required Indicator",
+            "type": "Toggle",
+            "description": "Is the field required?",
+            "class": "exfn-form-input-required"
+        }
+    ],
+    "siemens.entitypicker.EntityPicker": [
+        {
+            "name": "Show Required Indicator",
+            "type": "Toggle",
+            "description": "Is the field required?",
+            "class": "exfn-form-input-required"
+        }
+    ],
+    "DataView": [
+        {
+            "name": "OPC EX FN Properties view",
+            "type": "Toggle",
+            "description": "Display as properties",
+            "class": "exfn-properties-view"
+        }
+    ],
+    "siemens.fileupload.FileUpload": [
+        {
+            "name": "Show Required Indicator",
+            "type": "Toggle",
+            "description": "Is the field required?",
+            "class": "exfn-form-input-required"
+        }
+    ]
+}

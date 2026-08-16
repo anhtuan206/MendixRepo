@@ -1,0 +1,96 @@
+.s-event-wrap {
+  position: absolute;
+  overflow: visible;
+  min-width: 6px;
+  min-height: 6px;
+  z-index: 7;
+  align-items: center;
+  pointer-events: all;
+  transition: background-color .2s, color .2s, opacity .2s, font-weight .2s, border .2s;
+  contain: layout paint;
+
+  &.b-event-planned {
+    --event-background-color: var(--event-background-color-planned);
+  }
+
+  &.b-event-actual {
+    --event-background-color: var(--event-background-color-actual);
+  }
+
+  &.b-event-read-only {
+    .s-event {
+      cursor: default;
+    }
+  }
+}
+
+.s-event {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  grid-area: body;
+  color: var(--event-color);
+  background-color: var(--event-background-color);
+  border-color: var(--event-border-color);
+  border-width: var(--event-border-width);
+  border-style: var(--event-border-style);
+  border-radius: var(--event-border-radius);
+  font-weight: var(--event-font-weight);
+  opacity: var(--event-opacity);
+  user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+  overflow: clip;
+  white-space: nowrap;
+  width: calc(100% - 1px);
+  text-align: left;
+  min-width: 5px;
+  min-height: 5px;
+  transition: background-color .2s, color .2s, opacity .2s, font-weight .2s, border .2s;
+  position: relative;
+}
+
+.s-event-content {
+  position: sticky;
+  left: 9.75px;
+  margin: 0 6.5px 0 9.75px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  overflow: clip;
+  display: flex;
+  min-width: 0;
+  font-size: 13px;
+  z-index: 1;
+}
+
+.s-resize-handle {
+  position: absolute;
+  height: 50%;
+  width: 12px;
+  padding: 0 2px;
+  top: 25%;
+
+  &:before {
+    content: "";
+    position: relative;
+    display: block;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    opacity: .7;
+    background-size: 2px;
+    background: linear-gradient(to right, #fff 1px, transparent 1px) 3px;
+    cursor: col-resize;
+    z-index: 1;
+  }
+
+  &.s-left-resize {
+    left: -1px;
+  }
+
+  &.s-right-resize {
+    right: -1px;
+    left: auto;
+  }
+}

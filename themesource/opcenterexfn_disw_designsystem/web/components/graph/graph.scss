@@ -1,0 +1,122 @@
+@import '../../../../../theme/web/custom-variables';
+
+.exfn-graph-container {
+    height: 100%;
+    * {
+        font-size: 12px;
+        font-weight: 600;
+    }
+   .d-graph__controls {
+        padding: 0;
+        margin-bottom: 2px;
+        .d-graph__btn {
+            box-shadow: none;
+        }
+        .d-graph__btn__label {
+            font-size: 10px;
+        }
+    }
+    .d-graph__node > div{
+        display: grid;
+        user-select: none;
+    }
+    .d-graph__node > div {
+        grid-template-columns: 24px 1fr 24px;
+        column-gap: 4px;
+        grid-template-rows: 1fr;
+        justify-items: center;
+        padding: 6px;
+        
+        .icon-container, .indicator-container, .item-details-container {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            min-width: 0;
+        }
+        .indicator-container {
+            img {
+                height: 16px;
+                width: 16px;
+            }
+        }
+        .icon-container {
+            flex-direction: column;  
+            justify-content: space-between;
+            
+            .type-icon img {
+                height: 24px;
+                width: 24px;
+            }
+            img {
+               height: 16px;
+               width: 16px;
+            }
+        }
+        .item-details-container span {
+            align-self: center;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-break: break-word;
+            text-overflow: ellipsis;
+        }
+        .indicator-container {
+            flex-direction: column-reverse;
+            .indicators {
+                align-self: end;
+            }
+        }
+    }
+    
+    .d-graph__container{
+        max-height: calc(100% - 70px);
+        overflow-y: auto;
+    }
+    .d-graph__node:not(.parent-entity){
+        cursor: default;
+    }
+    .d-graph__node.navigable-entity > div:hover{
+        background-color: #CDE6EB;
+    }
+    .d-graph__node.navigable-entity > div:has(.node-graph-container .node-selected){
+        background-color: #CDE6EB;
+    }
+    .external-dependency {
+        stroke-dasharray: 4;
+    }
+    .no-data-container {
+        height: auto;
+        width: 100%;
+        margin-top: calc(15vh - 75px);
+        text-align: center;
+        p {
+            margin-top: 12px;
+            font-size: 17.3px;
+            color: #6E6E6E;
+            font-weight: 400;
+            font-style: italic;
+        }
+        img {
+            height: 48px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 1;
+        }
+    }
+    &.no-data {
+        button {
+            filter: invert(69%) sepia(3%) saturate(7%) hue-rotate(318deg) brightness(99%) contrast(92%);
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
+    .d-graph__no-data {
+        display: none;
+    }
+    &:has(.d-graph__container) {
+        .no-data-container {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.s-released {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.s-odd {
+  background: var(--grid-bg-odd);
+}
+
+.s-bold {
+    font-weight: 600;
+}

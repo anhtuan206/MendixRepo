@@ -1,0 +1,22 @@
+.siemens-gantt {
+  min-height: 200px;
+
+  &.s-is-resizing * {
+    user-select: none !important;
+  }
+}
+
+.s-gantt {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  position: relative;
+  flex-flow: column nowrap;
+  min-height: 140px;
+  height: 100%;
+  align-self: stretch;
+  flex: 1 1 auto;
+  padding: 0;
+  color: var(--color);
+}
+

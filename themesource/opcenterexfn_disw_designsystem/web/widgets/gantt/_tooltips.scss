@@ -1,0 +1,43 @@
+.s-tooltip {
+  position: absolute;
+  contain: layout style;
+  transition: opacity .2s;
+  box-shadow: 0 3px 6px #0000001f, 0 3px 6px #0000003d;
+  background-color: #fff;
+  z-index: 10000;
+  user-select: none;
+
+  &.s-tooltip-event {
+    .s-tooltip-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 150px;
+      max-width: 150px;
+      padding: 14px;
+
+      .s-tooltip-date {
+        margin-bottom: 10px;
+      }
+
+      .s-tooltip-time {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      .s-tooltip-duration {
+      }
+    }
+
+    &.s-tooltip-full .s-tooltip-content {
+      width: 280px;
+      max-width: 280px;
+    }
+  }
+}
+
+.s-tooltip-content {
+  padding: 14px;
+}

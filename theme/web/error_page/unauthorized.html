@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+  </head>
+  <body>
+     <h1 style="color:black;font-size:20px;">The client request has not been completed because it lacks valid authentication credentials for the requested resource.</h1>
+     <p style="background-color: #ffffe0 ; padding: 10px; border: 1px solid yellow; color:rgb(250, 75, 0);font-size:16px;" id="message"></p>
+     <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const msg= urlParams.get('msg');
+      document.getElementById('message').innerHTML = "["+ msg + "]";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+.s-header-container {
+  z-index: 4;
+  display: inline-flex;
+  background-color: var(--bg-panel);
+  box-shadow: 0 2px 4px #00000012;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  line-height: initial;
+  position: relative;
+  overscroll-behavior: none;
+  contain: paint style layout;
+  flex: 0 1 auto;
+
+  > .s-grid-header:last-of-type {
+    border-inline-end: 0 none transparent;
+  }
+}
+
+.s-grid-headers {
+  display: inline-flex;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  line-height: initial;
+  position: relative;
+  overscroll-behavior: none;
+
+  > .s-grid-header:last-of-type {
+    border-inline-end: 0 none;
+  }
+}
+
+.s-grid-header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  user-select: none;
+  color: var(--color-header);
+  outline: none;
+  border-inline-end: 1px solid var(--grid-border-color);
+  overflow: hidden;
+  z-index: 2;
+  contain: paint style layout;
+  -webkit-overflow-scrolling: touch;
+  align-items: center;
+  border-bottom: 1px solid var(--grid-border-color);
+  -webkit-user-select: none;
+  justify-content: center;
+  flex-grow: 1;
+  min-height: 55px;
+}
+
+.s-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  contain: paint style layout;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+
+.s-header-row {
+  position: relative;
+  contain: strict;
+  flex: 1 0 28px;
+  overflow: visible;
+}
+
+.s-header-text {
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  user-select: none;
+  white-space: nowrap;
+  position: relative;
+  font-weight: 600;
+  left: 1px; // sticky
+  padding-left: 7px;
+}

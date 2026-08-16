@@ -1,0 +1,18 @@
+.s-overlay-canvas.s-canvas {
+  z-index: 100;
+}
+
+.s-overlay-item {
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  pointer-events: none;
+  font-size: 20px;
+
+  &.s-no-time-ranges {
+    white-space: nowrap;
+  }
+}

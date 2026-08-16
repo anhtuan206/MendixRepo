@@ -1,0 +1,211 @@
+/* ==========================================================================
+   Tile
+
+   Default settings for Tile
+========================================================================== */
+
+.show-ellipses {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    .mx-text {
+        white-space: nowrap;
+    }
+}
+
+.widget-gallery-item.widget-gallery-clickable {
+    background-color: $exfn-tile-background-color;
+    color: #1e1e1e;
+    &:hover {
+        background-color: $exfn-tile-hover-background-color;
+    }
+    &.widget-gallery-selected {
+        background-color: $exfn-tile-selected-background-color;
+    }
+    &.widget-gallery-selected:hover {
+        background-color: $exfn-tile-hover-on-selection-background-color;
+    }
+}
+
+.widget-gallery:not(.widget-gallery-disable-selected-items-highlight) .widget-gallery-item.widget-gallery-clickable.widget-gallery-selected {
+    background-color: $exfn-tile-selected-background-color;
+    &:hover {
+        background-color: $exfn-tile-hover-on-selection-background-color;
+    }
+}
+
+.widget-gallery .widget-gallery-item:not(.widget-gallery-selected) .exfn-tile-container {
+    background-color: $exfn-tile-background-color;
+    &.selected {
+        color: #1e1e1e;
+        background-color: $exfn-tile-selected-background-color;
+    }
+    &:hover {
+        color: #1e1e1e;
+        background-color: $exfn-tile-hover-background-color;
+    }
+}
+
+.widget-gallery-hover {
+    .widget-gallery-item.widget-gallery-clickable:hover {
+        background-color: $exfn-tile-hover-background-color;
+        & > .exfn-tile-container {
+            background-color: $exfn-tile-hover-background-color;
+        } 
+    } 
+    .widget-gallery-item.widget-gallery-clickable.widget-gallery-selected:hover {
+        background-color: $exfn-tile-hover-on-selection-background-color;
+        & > .exfn-tile-container {
+            background-color: $exfn-tile-hover-on-selection-background-color;
+        } 
+    }
+} 
+
+/* Cell with properties */
+.exfn-tile-container {
+    width: 328px;
+    padding: 16px;
+    overflow: hidden;
+
+    .exfn-tile-icon-container {
+        vertical-align: middle;
+        .exfn-tile-icon { 
+            width: 48px;
+            height: 48px;
+            margin-left: 0;
+            margin-right: auto;
+            img {
+                min-height: 48px;    
+                min-width: 48px;  
+            }  
+        }
+    }
+
+    .exfn-tile-buttons img {
+        height: 24px;    
+        width: 24px;    
+    }
+   
+    &.selected {
+        color: #1e1e1e;
+        background-color: $exfn-tile-selected-background-color;
+    }
+    &.selected:hover {
+        background-color: $exfn-tile-hover-on-selection-background-color;
+    }
+    .exfn-title-container {
+        width: 210px;  
+        > div {
+            width: 210px;
+        }
+    }   
+    .tile-properties {
+        width: 240px;
+    }
+    .tile-indicators {
+        height: 32px ;
+        margin-top: 5px;
+    }
+}
+
+.mx-table { 
+    &.tableHeader {
+        background-color: #e6e6e6;
+        color: #464646;
+
+        td {
+            padding-right: 5px !important;
+            padding-left: 5px !important;
+        }
+
+    }   
+    > tbody {
+        > tr.tableHeader { 
+            background-color: #e6e6e6;
+            color: #464646;
+
+            > td {
+                padding: 8px 8px 8px 8px !important;
+            }
+        }
+    }
+    &.noPadding {
+        > tbody {
+            > tr { 
+                padding: 0 !important;
+                margin: 0 !important;
+                > td {
+                    padding: 0 !important;
+                    margin: 0 !important;
+                }
+            }
+            > tr.tableHeader { 
+                > td {
+                    padding: 8px 8px 8px 8px !important;
+                    margin: 0 !important;
+                }
+            }
+        }
+    }
+
+    &.noBorders {
+        border-style: hidden !important;       
+        > tbody {
+            > tr { 
+                > td {
+                    border-style: hidden !important;
+                }
+            }
+        }
+    }
+}
+
+/* Default Cell without properties */
+.exfn-cell-container {
+    .exfn-cell {
+        display: grid;
+        grid-template-columns: 54px 1fr 32px;
+        height: 100%;
+        padding: 8px 4px;
+        background-color: #f0f0f0;
+        color: #1e1e1e;
+
+        .title-container {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            span {
+                font-size: 12px;
+                text-overflow: ellipsis;
+                text-wrap: nowrap;
+                overflow: hidden;
+            }
+            :first-child {
+                font-weight: 600;
+            }
+        }
+       
+        .type-icon-container {
+            margin: auto auto;
+            img {
+                min-width: 24px;
+                min-height: 24px;
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        .actions-container {
+            a {
+                padding: 0px;
+            }
+            img {
+                min-width: 24px;
+                min-height: 24px;
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}

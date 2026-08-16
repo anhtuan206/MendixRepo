@@ -1,0 +1,622 @@
+@import "../_custom-variables.scss";
+
+/* Inputs */
+.form-group input:focus, .form-group input:active,
+input.form-control:focus, input.form-control:active {
+    border: 2px solid $exfn-input-focus-border-color;
+}
+.form-group input:hover,
+input.form-control:hover {
+    border: 2px solid $exfn-select-input-hover-border-color;
+}
+.form-group input::-webkit-input-placeholder  {
+    color: #6E6E6E;
+}
+
+/* Dropdown */
+.dropdown-triggerer-wrapper {
+    height: 32px;
+    border: 1px solid $exfn-select-input-hover-border-color;
+
+    .btn-sort {
+        padding: 4px;
+    }
+
+    input.dropdown-triggerer {
+        height: 30px;
+        background-color: #fff;
+    }
+
+    input.dropdown-triggerer:focus, input.dropdown-triggerer:active {
+        border: 2px solid $exfn-input-focus-border-color;
+        border-radius: 2px;
+    }
+
+    input.dropdown-triggerer:hover {
+        border: 2px solid $exfn-select-input-hover-border-color;
+        border-radius: 2px;
+    }
+}
+
+ul.dropdown-list {
+    border-radius: unset !important;
+
+    > li.filter-selected {
+        background: $exfn-tile-hover-background-color 0% 0% no-repeat padding-box !important;
+        color: inherit !important;
+    }
+}
+
+@font-face {
+    font-family: "exfn-dropdown-sort";
+    src: url("./fonts/exfn-dropdown-sort.eot?46260688");
+    src: url("./fonts/exfn-dropdown-sort.eot?46260688#iefix") format("embedded-opentype"),
+        url("./fonts/exfn-dropdown-sort.woff2?46260688") format("woff2"),
+        url("./fonts/exfn-dropdown-sort.woff?46260688") format("woff"),
+        url("./fonts/exfn-dropdown-sort.ttf?46260688") format("truetype"),
+        url("./fonts/exfn-dropdown-sort.svg?46260688#dropdown-sort") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.dropdown-triggerer-wrapper {
+    .btn-sort {
+        font-family: "exfn-dropdown-sort"; 
+        &.icon-asc:before {
+            content: "\e900";
+        }
+        &.icon-desc:before {
+            content: "\e901";
+        }
+    }
+}
+
+.form-group .form-control:focus, .form-group  input:focus,.form-group input.dropdown-triggerer:focus {
+    border-width: 2px;
+    border-color: $exfn-input-focus-border-color;
+}
+
+.form-group .form-control:hover:not(:focus):not(:active), 
+.form-group input:hover:not(:focus):not(:active),
+.form-group input.dropdown-triggerer:not(:focus):not(:active) {
+    border-width: 2px;
+    border-color: $exfn-input-hover-border-color;
+}
+
+/* CHECKBOX and RADIO */
+.mx-checkbox input[type=checkbox]{
+    border-radius: 2px;
+}
+
+.mx-checkbox input[type=checkbox]:checked:before {
+    font-size: 9px;
+    top: 4px;
+    left: 4px;
+}
+
+.mx-checkbox input[type=checkbox] {
+    border: 1px solid #464646 !important;
+    &:hover {
+        border: 1px solid #0F789B !important;
+    }
+}
+
+.mx-checkbox input[type=checkbox][disabled] {
+    background: #D9D9D9 !important;
+    color: white !important;
+    border-color: #999999 !important;
+    &:hover {
+        border: 1px solid #999999 !important;
+    }
+}
+
+.mx-checkbox input[type=checkbox]:checked {
+    background: unset !important;
+    border: 1px solid #0F789B !important;
+}
+
+.mx-checkbox input[type=checkbox][disabled][checked],
+.mx-checkbox input[type=checkbox][disabled][checked]::before {
+    background: #D9D9D9 !important;
+    color: #999999 !important;
+    border-color: #999999 !important;
+}
+
+.mx-checkbox input[type=checkbox]:checked, 
+.mx-checkbox input[type=checkbox]:checked:before {
+    background: #197fa2 !important;
+    z-index: 1;
+}
+
+.mx-checkbox.CheckboxRadioButton {
+    input[type="checkbox"] {
+        content: "";
+        border-radius: 50%;
+        margin-left: 0;
+    }
+
+    input[type=checkbox]:checked:before {
+        content: "\2B24";//Unicode character Black Large Circle
+        position: absolute;
+        color: #005f87;
+        background-color: transparent !important;
+        font-weight: 900;
+        font-size: 12px;    
+        top: 1px;
+        left: 3px;
+    }
+
+    input:checked:after{
+        outline:none;
+        animation: none;
+        content: "";
+        color: black;
+        border: none;
+        
+    }
+
+    input:hover:after{
+        outline:none;
+        animation: none;
+        content: "";
+        border: none;
+    }
+}
+
+.mx-radiobuttons {
+    input[type=radio]:checked:hover,
+    input[type=radio]:checked:active,
+    input[type=radio]:checked:focus {
+        &:before {
+            height: 9px;
+            width: 9px;
+        }
+    }
+}
+
+.exfn-form-input-required {
+    label:before {
+        content:"*";
+        color: #005f87;
+        font: normal normal bold 24px/32px Segoe UI;
+    }
+}
+
+.exfn-sidePanel {
+    .duration-container {
+        display: flex;
+        > div {
+            margin: 0;
+        }
+        > .form-group {
+            padding-right: 8px;
+        }
+    }
+    .inline-button {
+        display: flex;
+        > div {
+            flex-grow: 1;
+        }
+        button {
+            height: 32px;
+            width: 32px;
+            margin: 28px 0 4px 4px;
+            padding: 0px;
+            img {
+                width: 24px;
+                height: 24px;
+                filter: invert(49%) sepia(97%) saturate(350%) hue-rotate(150deg) brightness(86%) contrast(85%);
+            }
+        }
+    }
+    .inline-button-with-label {
+        display: flex;
+        > div {
+            flex-grow: 1;
+            margin-bottom: 0;
+        }
+        button {
+            height: 32px;
+            width: 80px;
+            margin: 28px 0 4px 4px;
+            padding: 0;
+            font-size: 14.4px;
+        }
+    }    
+    .inline-input-label {
+        display: flex;
+        > label {
+            margin-top: 34px;
+            margin-left: 8px;
+        }
+    }
+    .form-group {
+        margin: 8px 0;
+        font: normal normal 600 12px/16px Segoe UI;
+        letter-spacing: 0px;
+        color: #1E1E1E;
+        opacity: 1;
+
+        &.mx-datepicker > .mx-compound-control input[type="text"],
+        >input[type="text"],
+        >textarea,
+        >select,
+        >.exfn-select {
+            width: 100%;
+            height: 32px;
+            font: normal normal 400 12px/16px Segoe UI;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            border: 1px solid #8C8C8C;
+            border-radius: 2px;
+            letter-spacing: normal;
+            opacity: 1;
+            line-height: 1.32;
+            
+            .exfn-select-trigger svg.input-contained-icon {
+                padding: 2px;
+            }
+
+            &:focus, &:active {
+                border: 2px solid $exfn-input-focus-border-color;
+            }
+            &:hover {
+                border: 2px solid $exfn-select-input-hover-border-color;
+            }
+            &:disabled {
+                background-color: #f0f0f0;
+            }
+        }
+        .mx-compound-control {
+            border: 1px solid #8C8C8C;
+            border-radius: 2px;
+        }        
+        .exfn-select:active, >.exfn-select.active,>.exfn-select:hover, >.exfn-select:focus-within {
+            border-width: 2px;
+            border-style: solid; 
+            .exfn-select-trigger {
+                padding: 7px 3px 7px 7px;
+
+                svg.input-contained-icon {
+                    top: 15px;
+                    right: 3px;
+                }
+            } 
+        }
+        >.exfn-select:hover, >.exfn-select:focus-within{
+            border-color: #8C8C8C;
+        }
+        >.exfn-select:active, >.exfn-select.active  {
+            border-color: $exfn-input-focus-border-color;
+        }
+
+        &.mx-datepicker > .mx-compound-control {
+            button {
+                padding: 2px 8px;
+            }
+        }
+
+        >input,
+        >textarea,
+        >select {
+            padding: 8px;
+            &:disabled {
+                background-color: #f0f0f0;
+            }
+            &:focus, &:active, &:hover {
+                padding: 7px;
+            }
+        }
+        >input[type="checkbox"] {
+            &:focus, &:active, &:hover {
+                padding: 5px;
+            }
+        }
+
+        >.exfn-select.disabled{
+            background-color: #f0f0f0; 
+        }
+
+        label {
+            height: 16px;
+            /* UI Properties */
+            text-align: left;
+            font: normal normal 600 12px/16px Segoe UI;
+            letter-spacing: 0px;
+            color: #1E1E1E;
+            opacity: 1;
+            margin-bottom: 4px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            &:focus, &:active, &:hover {
+                padding: 7px 0 7px 0;
+            }
+        }
+
+        &.exfn-form-input-required label:before,
+        &.required label:before {
+            content: "*";
+            color: #005f87;
+            font: normal normal bold 24px/16px Segoe UI;
+            padding-top: 8px;
+            padding-right: 2px;
+        }
+
+        &.has-error {
+            display: flex;
+            flex-direction: column-reverse;
+
+            &:before {
+                font-size: 16px;
+                height: 16px;
+                right: 8px;
+                top: calc(50% + 12px);
+            }
+            &:has(.exfn-select):before {
+                right: 32px;
+            }
+            label,
+            label:before {
+                display: none;
+            }
+
+            >input[type="text"],
+            >textarea, 
+            >.exfn-select {
+                background: #DC00001A 0% 0% no-repeat padding-box;
+                border: 1px solid #DC0000;
+                border-radius: 2px;
+            }
+
+            >input[type="text"],
+            >textarea {
+                padding-right: 24px;
+            }
+            >.exfn-select .exfn-select-value {
+                padding-right: 24px;
+            }
+            
+            .alert {
+                @include reset;
+                top: 0px;
+                color: red;
+                max-height: 32px;
+                padding-left: 12px;
+                text-align: left;
+                margin-bottom: 4px;
+                @include show-ellipses-after-rows(1);
+            }
+
+            .alert:before {
+                @include reset;
+                
+                content: "*";
+                left: 0;
+                position: absolute;
+                font-size: 24px;
+                height: 16px;
+                width: min-content;
+                top: 4px;
+            }
+
+            .alert:after {
+                content: none;
+            }
+        }
+    }
+}
+
+label.required-field:before,
+span.required-field:before,
+h5.required-field:before {
+    content: "*";
+    color: #005f87;
+    font: normal normal bold 24px/16px Segoe UI;
+    padding-right: 4px;
+    vertical-align: middle;
+}
+
+.file-uploader {
+	.upload-text {
+		padding-left: 8px;
+	}
+}
+
+.mx-calendar {
+    background: #fff;
+}
+
+.exfn-switch-container {
+    display: flex;
+    label {
+        margin: 10px 0;
+        font-size: $exfn-small-font-size;
+        color: $exfn-headerBar-label-color;
+        font-weight: normal;
+    }
+}
+
+/* SWITCH */
+.widget-switch {
+    height: 32px;
+    width: 56px;
+    margin: 3px 0;
+    padding: 0 2px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    .widget-switch-btn-wrapper {
+        height: 24px;
+        width: 48px;
+        margin-top: 1px;
+        .widget-switch-btn
+        {
+            height: 20px;
+            width: 20px;
+            margin-top: 2px;
+            margin-left: 1px;
+            &.right {
+                left: 24px;
+                background-color: #fff;
+                transition: background-color .4s,left .2s;
+            }
+            &.left {
+                left: 2px;
+            }
+        }   
+        &.checked {
+            background-color: #2387aa;
+            border-color: rgb(35, 135, 170);
+            box-shadow: rgb(35, 135, 170) 0 0 0 16px inset;
+        }   
+        &.un-checked {
+            background-color: rgb(120, 120, 120);
+            border-color: rgb(120, 120, 120);
+            box-shadow: rgb(120, 120, 120) 0 0 0 0 inset;
+        }  
+        &:focus {
+            outline: 0;
+        }
+    }
+}
+
+/* COMBO BOX */
+.widget-combobox {
+    min-width: 200px;
+    .widget-combobox-selected-item {
+        height: 24px;
+        margin-top: 5.5px;
+        background-color: #C8F5FF;
+        border-radius: 12px;
+        color: #005F87;
+        font-size: 12px;
+        font-weight: 600;
+        justify-content: center;
+        line-height: unset;
+        border: solid 1px #005F87;
+        .widget-combobox-caption-custom {
+            align-self: flex-start;
+            margin-top: 1.5px;
+            .combo-box-badge {
+                display: flex;
+                img {
+                    height: 16px;
+                }
+                span {
+                    padding-left: 6px;
+                }
+            }
+        }
+        .widget-combobox-clear-button {
+            height: 16px;
+            .widget-combobox-icon-container {
+                height: 16px;
+                svg {
+                    height: 16px;
+                    width: 16px;
+                    color: #005F87;
+                }
+            }
+        }
+    }
+    .form-control.widget-combobox-placeholder {
+        display: flex;
+        width: 100%;
+        height: 32px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #8C8C8C;
+        border-radius: 2px;
+        letter-spacing: normal;
+        opacity: 1;
+        line-height: 1.32;
+        padding: 0;
+        .widget-combobox-icon-container {
+            padding-top: 8px;
+            padding-right: 4px;
+        }
+    }
+    .widget-combobox-input.widget-combobox-input-nofilter {
+        display: none;
+    }
+    &:has(div.widget-combobox-input-container-disabled) {
+        background-color: #f0f0f0;
+        cursor: not-allowed;
+    } 
+}
+.widget-combobox-menu { 
+    z-index: 5;
+    border-radius: 2px;
+    margin: 0;
+    padding: 0;
+    .widget-combobox-menu-header {
+        input[type=checkbox].three-state-checkbox {
+            &:focus {
+                outline: none;
+            }
+            &:before {
+                border: 1px solid #197fa2;
+                border-radius: 2px;
+            }
+            &:indeterminate:before, 
+            &:checked:before {
+                background-color: #197fa2;
+            }
+            &:hover:indeterminate:after,
+            &:active:indeterminate:after,
+            &:focus:indeterminate:after,
+            &:hover:not(:indeterminate):after,
+            &:active:not(:indeterminate):after,
+            &:focus:not(:indeterminate):after {
+                margin: 3px 2px;
+                transition: none;
+            }
+        }
+        &.widget-combobox-item {
+            cursor: pointer;
+            padding: 6px 10px 6px 10px;
+        }
+        label {
+            cursor: pointer;
+            font-size: 12px;
+        }
+        &:focus,
+        &:focus-within,
+        &:hover {
+            background-color: $exfn-hover-background-color;
+            transition: none;
+        } 
+    }
+    ul.widget-combobox-menu-list {
+        li {
+            > span {
+                font-size: $exfn-normal-font-size;
+                color: #464646;
+                margin-top: 2px;
+                padding-left: 6px;
+            }
+            div {
+                display: flex;
+                img {
+                    margin-top: 3px;
+                    height: 16px;
+                }
+                span {
+                    font-size: $exfn-normal-font-size;
+                    margin-top: 2px;
+                    padding-left: 6px;
+                }
+            }
+            &.widget-combobox-item-selected {
+                background-color: $exfn-selection-background-color;
+                &:hover {
+                    background-color: $exfn-selection-hover-background-color;
+                }
+            }
+            &.widget-combobox-item-highlighted, &.widget-combobox-item:focus{
+                background-color: $exfn-selection-background-color;
+                &:hover {
+                    background-color: $exfn-selection-hover-background-color;
+                }
+            }
+        }
+    }     
+}

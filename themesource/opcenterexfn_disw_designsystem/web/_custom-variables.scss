@@ -1,0 +1,120 @@
+/* -------------------- Header Bar --------------------*/
+$exfn-headerBar-value-font-size: 12px; //1vw; -- 14px;
+$exfn-headerBar-label-font-size: 12px; //1vw; -- 14px;
+$exfn-headerBar-value-font-weight: 700;
+$exfn-headerBar-label-font-weight: 400;
+$exfn-headerBar-label-color: #464646;
+$exfn-headerBar-value-color: #1e1e1e;
+$exfn-headerBar-container-shadow-color: rgb(0 0 0 / 30%);
+$exfn-headerBar-background-color: #f0f0f0;
+$exfn-headerBar-link-value-color: #197FA2;
+$exfn-headerBar-container-height: 48px;
+$exfn-tile-background-color: #fafafa;
+$exfn-tile-selected-background-color: #cde6eb;
+$exfn-tile-hover-background-color: #daecf0;
+$exfn-tile-hover-on-selection-background-color: #bedfe6;
+$exfn-box-shadow-color: #0000004D;
+
+/* -------------------- Text Font ------------------------------*/
+$exfn-small-font-size: 10px; 
+$exfn-small-line-height: 13px; 
+$exfn-normal-font-size: 12px; 
+$exfn-normal-line-height: 16px; 
+$exfn-medium-font-size: 14.4px; 
+$exfn-medium-line-height: 19px; 
+$exfn-large-font-size: 17.28px; 
+$exfn-large-line-height: 23px; 
+$exfn-xlarge-font-size: 20.74px; 
+$exfn-xlarge-line-height: 27px; 
+$exfn-xxlarge-font-size: 24.88px; 
+$exfn-xxlarge-line-height: 33px; 
+
+$exfn-semibold: 600;
+$exfn-bold: 700;
+
+/*-------------------------- Interaction -----------------------*/
+$exfn-selection-background-color: #CDE6EB;
+$exfn-hover-background-color: #DAECF0;
+$exfn-selection-hover-background-color: #BEDFE6;
+
+/* -------------------- Operation Container --------------------*/
+$exfn-operationContainer-border-color: #828282;
+
+/* -------------------- Specification Item ---------------------*/
+$exfn-specification-completed-background-color: #edfbf5;
+$exfn-specification-completed-border-color: #0a9b00;
+$exfn-specification-partial-background-color: #fff7cd;
+$exfn-specification-partial-border-color: #ffb900;
+$exfn-specification-initil-background-color: #ffffff;
+$exfn-specification-initial-border-color: #55a0b9;
+$exfn-specification-border-thickness: 6px;
+
+/* ---------------------- Input --------------------------------*/
+$exfn-input-border-color: #828282;
+$exfn-input-focus-border-color: #3296B9;
+$exfn-select-input-hover-border-color:#8C8C8C;
+$exfn-input-hover-border-color: #8C8C8C;
+$exfn-placeholder-color: #999999;
+
+/* ---------------------- Popups -------------------------------*/
+$exfn-contextualMenu-width: 180px;
+$exfn-contextualMenu-color: #1E1E1E;
+
+/* ---------------------- Gant ---------------------------------*/
+$exfn-grid-border-color: #1E1E1E;
+
+/*------------------ Information Bar ---------------------------*/
+$exfn-info-background-color: #E3FAFF;
+$exfn-info-border-color: #b6effb;
+$exfn-info-text-color: #005F87;
+
+/* ---------------------- Tags ----------------------------------*/
+$exfn-tag-border-color: #005F87;
+$exfn-tag-text-color: #005F87;
+$exfn-tag-background-color: #C8F5FF;
+
+/* ------------------ Progress Bar ------------------------------*/
+$exfn-progressbar-background-color: #E3FAFF;
+
+/* --------------------- Wizard ---------------------------------*/
+$exfn-step-wizard-active-background-color: #005F87;
+$exfn-step-wizard-background-color: #fafafa;
+$exfn-step-wizard-border-color: rgba(0, 0, 0, 0.15);
+
+/* --------------------- Loader ---------------------------------*/
+$exfn-loader-border-color: #005F87;
+
+/* --------------------- Gantt ----------------------------------*/
+.siemens-gantt {
+  // base
+  --color: #444444;
+  --color-header: var(--color);
+  --bg: #fff;
+  --bg-panel: #E7E7E7;
+
+
+  // grid
+  --grid-border-color: #bdbdbd;
+  --grid-row-border-color: #e0e0e0;
+  --grid-column-border-color: #e0e0e0;
+  --grid-splitter-bg: #d6d6d6;
+  --grid-bg-odd: rgba(0, 0, 0, 0.03);
+  --grid-bg-hover: rgba(255, 178, 32, 0.1);
+  --grid-bg-selected: rgba(255, 178, 32, 0.16);
+  --grid-bg-hover-selected: rgba(255, 178, 32, 0.20);
+  --grid-bg-timeaxis-selected: rgba(255, 178, 32, 0.07);
+
+  // events
+  --event-background-color-planned: #3E95B8;
+  --event-background-color-actual: #72ae56;
+  --event-border: #fff;
+  --event-border-radius: 0;
+  --event-color: #fff;
+  --event-hover-color: #fff;
+  --event-opacity: 1;
+  --event-hover-opacity: 1;
+  --event-font-weight: 500;
+
+  // chips
+  --chip-border-color: #186686;
+}

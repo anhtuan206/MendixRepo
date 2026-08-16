@@ -1,0 +1,29 @@
+.s-grid-splitter {
+  z-index: 5;
+  position: relative;
+  background: var(--grid-splitter-bg);
+  cursor: col-resize;
+  --extra-hit-box-width: 5px;
+
+  &.s-is-mobile {
+    --extra-hit-box-width: 20px;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: var(--extra-hit-box-width);
+  }
+
+  &::before {
+    left: calc(var(--extra-hit-box-width)  * -1);
+  }
+
+  &::after {
+    right: calc(var(--extra-hit-box-width) * -1);
+  }
+}
+

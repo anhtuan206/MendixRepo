@@ -1,0 +1,159 @@
+@import "../../custom-variables";
+
+.vertical-command-bar-gallery {
+    position: absolute;
+    width: 56px;
+
+    &, > div {
+        height: 100%;
+    }
+    right: 0px;
+    .vertical-command-bar {
+        width: 56px;
+        height: 100%;
+    }
+}
+
+.popupmenu-menu {
+    color: #464646 !important;
+    border-radius: 3px;
+    box-shadow: 0px 4px 8px 0px #0000004D;
+    border: solid 1px #dcdcdc;
+    z-index: 99 !important;
+    background-color: #fff;
+    width: auto;
+    min-width: 220px;
+    li.popupmenu-basic-item {
+        font-size: 12px;
+        padding: 8px 16px;
+        color: #1e1e1e;
+        list-style-type: none;
+        cursor: pointer;
+        &:first-child {
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+        &:last-child {
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+        &:hover {
+            background-color: #daecf0;
+        }
+    }
+    .popupmenu-custom-item:first-child {
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+    .popupmenu-custom-item:last-child {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+}
+
+.vertical-command-bar {
+    background-color: #f0f0f0;
+    border-color: #dcdcdc;
+    color: #464646;
+    .popupmenu-menu {
+        top: 3px !important;
+        left: 3px !important;
+    }
+    .exfn-popup-model, .popupmenu {
+        .popupmenu-trigger {
+            width: 48px;
+            .command, .exds-verticalCommandBar-icon-container { 
+                height: 56px;
+                padding: 8px 0 0 4px;
+                margin: 0;
+                > a {
+                    padding: 0 12px 0 12px;
+                }
+                span {
+                    width: 48px;
+                    font-size: 10px;
+                    text-align: center;
+                }
+            }
+        }
+        &:before {
+            position: absolute;
+            content: "";
+            display:block;
+            height: 18px;
+            width: 18px;
+            background-size: 18px 18px;
+            background-image: url('data:image/svg+xml,<svg version="1.1" id="Livello_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve"><polygon id="polygon2-9-7-6-2-4" class="aw-theme-iconOutline" fill="%23464646" points="10,4 6,8 10,12 "/></svg>');
+            background-repeat: no-repeat;
+            margin-top: 20px;
+            margin-left: -5px;
+        } 
+        &:hover {
+            background-color: #daecf0;
+        }
+    }
+}
+
+/* Vertical Command Bar */
+.exds-verticalCommandBar-icon-container {
+    text-align: center;     
+    height: 56px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    a {
+        padding-bottom: 0;
+        padding-top: 1px;
+        &.spacing-outer-top {
+            margin-top: 2px !important;
+        }
+    }
+    img {
+        height: 24px; 
+        width: 24px;
+    }
+    span {
+        display: inline-block;
+        width: 56px;
+        font-size: 10px;
+        vertical-align: top;
+        line-height: 12px;
+        word-break: break-word;
+    }
+    &:hover {
+        background-color: #daecf0;
+    }
+}
+
+/* Document Command Bar */
+.command-bar {
+    margin-bottom: 6px;
+    min-height: 40px;
+    padding: 0;
+
+    button {
+        height: 38px;
+        font-size: 10px;
+        padding: 6px;
+        box-shadow: none;
+        img {
+            height: 24px;
+        }
+        &:hover {
+            background-color: $exfn-hover-background-color;
+        }
+        &.btn.disabled {
+            background-color: #fff;
+        }
+    }
+
+    .command-bar-section {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+    }
+    > div {
+        > div {
+            display: flex;
+        }
+    }
+}

@@ -1,0 +1,212 @@
+@import "../../_custom-variables.scss";
+/* ==========================================================================
+   Header Bar
+
+   Default settings for Container / Labels / Values
+========================================================================== */
+.exfn-headerBar-column-container {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+
+    div {
+        height: 20px;
+        &.mx-layoutgrid:not(exfn-headerBar-row) {
+            flex: 1;
+        }
+        &.exfn-headerBar-row {
+            display: flex;
+            height: 20px;
+            align-items: baseline;
+        }
+    }
+}
+
+.exfn-asBuilt-header {
+    height: 60px;
+    margin: 0 16px 16px 16px;
+    display: flex;
+    > div { 
+        flex: 1;
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+        &:last-child {
+            max-width: 100px;
+        }
+        label {
+            color: #464646;
+            font-size: $exfn-normal-font-size;
+        }
+        > div.form-group.no-columns {
+            padding: 0;
+            margin: 0;
+        }
+        button.clear-all {
+            height: 32px;
+            width: auto;
+            min-width: 88px;
+            max-width: 100px;
+            border-radius: 2px;
+            padding: 0 8px;
+            margin-top: 26px;           
+            background-color: #fff;
+            font-size: $exfn-normal-font-size;
+            box-shadow: 0px 1px 2px $exfn-box-shadow-color;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &:hover {
+                background: #D9E7ED 0% 0% no-repeat padding-box;
+                box-shadow: 0px 3px 6px $exfn-box-shadow-color;
+                border: 1px solid #005F87;
+            }
+            &:focus {
+                background: #FFFFFF 0% 0% no-repeat padding-box;
+                box-shadow: 0px 1px 2px $exfn-box-shadow-color;
+                border: 2px solid #0F789B;
+            }
+            &:active {
+                background: #BFD7E1 0% 0% no-repeat padding-box;
+                box-shadow: 0px 1px 2px #0000004D;
+                border: 1px solid #005F87;
+            }
+        }
+    }
+}
+
+@mixin exfn-headerBar-value {
+    color: $exfn-headerBar-value-color;
+    font-size: $exfn-headerBar-value-font-size;
+    font-weight: $exfn-headerBar-value-font-weight;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 0px;
+    height: 100%;
+    width: 100%;
+    align-items: left;
+}
+
+.exfn-headerBar-value {
+    @include exfn-headerBar-value;
+    padding: 0 0 0 8px;
+}
+
+a.exfn-headerBar-value {
+    @include exfn-headerBar-value;
+    color: $exfn-headerBar-link-value-color;
+}
+
+.exfn-headerBar-label {
+    color: $exfn-headerBar-label-color;
+    text-decoration: none;
+    font-size: $exfn-headerBar-label-font-size;
+    font-weight: $exfn-headerBar-label-font-weight;
+    height: 100%;
+    width: auto;
+    min-width: 125px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.exfn-headerBar-container {
+    height: $exfn-headerBar-container-height;
+    max-height: 96px;
+    background: $exfn-headerBar-background-color;
+    padding: 8px;
+    padding-bottom: 0px;
+    border-bottom: 3px solid $exfn-headerBar-container-shadow-color;
+
+    .labels {
+        margin-left: 4px;
+        margin-right: 90px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: 100%;
+    }
+    
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin-right: 4px;
+        margin-top: 2px;
+
+        > a {
+            width: 86px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            border: 1px solid #D2D2D2;
+            background-color: white;
+
+            > img {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        > a.active {
+            border: 1px solid #3296B9;
+            background-color: #3296B9;
+        }
+    } 
+
+    &.one-row {
+        .row {
+            display: inline-flex;
+            flex-wrap: nowrap;
+            width: 100%;    
+            > div {
+                max-width: 18%;
+                .exfn-headerBar-column-container {
+                    margin: 0;
+                    .exfn-headerBar-label {
+                        height: 16px;
+                        font-weight: 400;
+                    }
+                    .exfn-headerBar-value {
+                        height: 20px;
+                        font-weight: 700;
+                        font-size: $exfn-medium-font-size;
+                        padding: 0;
+                        &:not(a) {
+                            color: $exfn-headerBar-label-color;
+                        }
+                    }
+                    &:first-child {
+                        margin-left: 5px;
+                    }
+                    &:last-child {
+                        margin-right: 5px;
+                    }
+                }
+            }      
+        }
+    } 
+}
+
+.exfn-headerBar-layout {
+    height: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+
+    .exfn-headerBar-layout > div.row {
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+
+    .exfn-headerBar-layout > div.row > div.col {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+}

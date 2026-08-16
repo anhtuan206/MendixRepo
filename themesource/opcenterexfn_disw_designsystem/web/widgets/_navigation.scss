@@ -1,0 +1,41 @@
+.region-sidebar .mx-navbar {
+    .mx-navbar-item {
+        a {
+            line-height: 12px;
+            img {
+                height: 24px;
+                width: 24px;
+                &[src*="cmd"] {
+                    filter: invert(100%) sepia(2%) saturate(1059%) hue-rotate(303deg) brightness(120%) contrast(150%);
+                } 
+            }
+        } 
+    }
+    .mx-navbar-submenu {
+        z-index: 1;
+        .mx-navbar-subitem a, 
+        .mx-navbar-subitem.open a {
+            text-decoration: none;
+            color: #AAE6F5;
+            background-color: transparent;
+            text-wrap: wrap;
+    
+            &:hover, &:active, &:focus {
+                color: #AAE6F5;
+                background-color: #004C6C;
+            }
+        }
+    
+        .mx-navbar-subitem.active a {
+            color: #AAE6F5;
+            background-color: #004C6C;
+        }
+    }
+
+    .dropdown.open > a {
+        &:hover, &:active, &:focus {
+            background-color: #003750;
+            outline: none;
+        }
+    }
+} 

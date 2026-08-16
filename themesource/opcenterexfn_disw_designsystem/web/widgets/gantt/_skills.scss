@@ -1,0 +1,68 @@
+.s-header-skills {
+  .s-header-text {
+    cursor: default;
+  }
+}
+
+.s-col-skills,
+.s-col-users,
+.s-skills-column,
+.s-users-column {
+  min-width: 100px;
+}
+
+.s-col-skills {
+
+}
+
+.s-col-users {
+
+}
+
+.s-skills-subgrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  margin-left: -0.5px;
+
+  .s-grid-row {
+    cursor: default;
+
+    &,
+    &:hover {
+      background: transparent;
+    }
+
+    &.s-odd,
+    &.s-odd:hover {
+      background: var(--grid-bg-odd);
+    }
+
+    &.s-is-selected,
+    &.s-is-selected:hover {
+      background: var(--grid-bg-timeaxis-selected);
+    }
+  }
+}
+
+.s-skills-column,
+.s-users-column {
+  height: 100%;
+  flex: 2;
+  padding: 7px;
+  overflow-x: auto;
+}
+
+.s-skills-column {
+
+  border-right: 1px solid var(--grid-column-border-color);
+}
+
+.s-users-column {
+
+}
+
+.s-badge.s-badge-skill {
+  cursor: default;
+}

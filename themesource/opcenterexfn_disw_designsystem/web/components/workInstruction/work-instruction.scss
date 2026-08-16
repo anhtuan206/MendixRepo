@@ -1,0 +1,785 @@
+@import "../../_custom-variables.scss";
+
+.tristate-checkbox {
+    input[type=checkbox]:checked, 
+    input[type=checkbox]:checked:before {
+        background: #197fa2 !important;
+        z-index: 1;
+    }
+
+    input[type=checkbox][disabled], 
+    input[type=checkbox][disabled][checked],
+    input[type=checkbox][disabled][checked]::before {
+        background: #aaaaaa !important;
+        color: white !important;
+        border-color: #aaaaaa !important;
+    }
+
+    &.indeterminate {
+        input[type=checkbox] {
+           background-color: #197fa2; 
+        }
+        input[type=checkbox]:before {
+            content: "\2014";
+            position: absolute;
+            color: white;
+            background-color: #197fa2;
+            font-weight: 900;
+            font-size: 10px;
+            top: 0;
+            left: 3px;
+        }
+        input[type=checkbox][disabled], input[type=checkbox][disabled]:before {
+            background: #aaaaaa !important;
+            color: white !important;
+            border-color: #aaaaaa !important;
+        }
+    }
+}
+
+.classItemGallerySel{
+    background-color: #005f87;
+    color: white; 
+}
+
+.mx-name-listStepItem{
+    .mx-listview-empty{
+        display: none;
+    }
+}
+
+.ReadOnly-Class{
+    cursor: not-allowed;
+}
+
+.NoEvent-Class-Button{
+    color: #aaaaaa;
+    border-color: #aaaaaa;
+    background-color: #ffffff;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.ReadOnly-Class-Button{
+    cursor: not-allowed;
+    //width: fit-content;
+}
+
+.NoEvent-Class-Input{
+    .form-control, button {
+        border-color: #969696;
+        background-color: #f0f0f0;
+        
+        pointer-events: none;
+    }
+}
+
+.error-IsRequired{
+    .form-control{
+        background-image: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDEwIDEwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cG9seWdvbiAgZmlsbD0iI0VDMjEyNyIgcG9pbnRzPSIwLDEwIDAsMCAxMCwwICIvPg0KPC9zdmc+);
+        background-repeat: no-repeat;
+        background-position: left top;
+        background-position-x: left;
+        background-size: 10px 10px;
+        padding-left: 10px;
+        border-color: #dc0000;
+    };
+}
+
+.mx-name-WIBorder{
+    .mx-groupbox {
+        margin: 0px ;
+        .mx-listview {
+            border-bottom: 0px !important;
+        }
+ }
+}
+
+.WI-PartiallyCompleted{
+    border-left: 10px solid #FAB80C;
+    padding:0px;
+}
+
+.WI-Completed{
+    border-left: 10px solid #3B9B35;
+    padding:0px;
+}
+
+.WI-New{
+    border-left: 10px solid #025F88;
+    padding:0px;
+}
+
+.stepNotActive{
+    background-color: #ffffff;
+}
+
+.stepComplete{
+    background-color: #EDFCF5;
+    background-repeat: no-repeat;
+    background-position: right 15px top 15px;
+    background-size: 20px 20px;
+}
+
+.Textbox-DataCollector{
+    width: 100%;
+}
+
+.text-dataCollector{
+    padding-top: 0px;
+    padding-bottom: 25px;
+}
+
+.layoutgrid-datacollector-item{
+    padding-left: 0px;
+}
+
+.mx-name-listStepItem{
+    .listview-row-item-grid{
+        padding-left: 0px;
+    }
+}
+
+.datetime-picker-container {
+    .Textbox-DataCollector{
+        min-width: 150px;
+    }
+}
+
+.mx-name-WIConfirmBn{
+    width: 50px;
+    background-color: transparent;
+}
+
+.mx-name-WIAcknowledgeBn{
+    width: 50px;
+    background-color: transparent;
+}
+
+.mx-name-accordionWI{
+    .widget-accordion-group{
+        > .widget-accordion-group-header > .widget-accordion-group-header-button {
+            cursor: auto;
+    
+            &.widget-accordion-group-header-button-clickable {
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: transparent;
+    
+                    > :is(h1, h2, h3, h4, h5, h6, p, span) {
+                        color: black;
+                    }
+                }
+            }
+        }
+        .widget-accordion-group-content{
+            padding: 0px;
+            //background-color: white;
+            .accordionSection-Initial {
+                .widget-accordion-group{
+                    .widget-accordion-group-header{
+                        background-color: white; 
+                    }
+                }
+            }
+            .accordionSection-Active{
+                .widget-accordion-group{
+                    .widget-accordion-group-header{
+                        background-color: FEF7CC; 
+                    }
+                }
+            }
+            .accordionSection-PartiallyCompleted{
+                .widget-accordion-group{
+                    .widget-accordion-group-header{
+                        background-color: #FEF7CC; 
+                    }
+                }
+            }
+            .accordionSection-NotActive{
+                .widget-accordion-group{
+                    .widget-accordion-group-header{
+                        background-color: #EBEBEB; 
+                        color: #aaaaaa;
+                    }
+                    .widget-accordion-group-content{
+                        background-color: #EBEBEB; 
+                    }
+                }
+            }            
+            .accordionSection-Complete{
+                .widget-accordion-group{
+                    .widget-accordion-group-header{
+                        background-color: #EDFCF5;
+                        background-repeat: no-repeat;
+                        background-position: right 15px top 15px;
+                        background-size: 20px 20px;
+                        color: #aaaaaa;
+                    }
+                    .widget-accordion-group-content{
+                        background-color: #EDFCF5;
+                        background-repeat: no-repeat;
+                        background-position: right 15px top 15px;
+                        background-size: 20px 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.accordionWI-PartiallyCompleted{
+    .widget-accordion-group{
+        .widget-accordion-group-header{
+            background-color: #FEF7CC; 
+        }
+    }
+}
+
+.accordionWI-Completed {
+    .widget-accordion-group{
+        .widget-accordion-group-header{
+            background-color: #EDFCF5;
+            background-repeat: no-repeat;
+            background-position: right 15px top 15px;
+            background-size: 20px 20px;
+            color: #aaaaaa; 
+        }
+    }
+}
+
+.ex-fn-custom-placeholder-container{
+    position: relative;
+
+    &:has(input:focus) .ex-fn-custom-placeholder, &:hover .ex-fn-custom-placeholder {
+        visibility: hidden;
+    }
+
+    .ex-fn-custom-placeholder{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        color: $exfn-placeholder-color;
+    }
+}
+
+.exfn-WI-section-content {
+    h4, .h4, h5, .h5, h6, .h6, label, span {
+        font-size: 12px;
+    }
+    .form-control { 
+        font-size: 12px; 
+    }
+    .dropdown-triggerer-wrapper {
+        margin-top: 1px;
+        height: 32px;
+        .btn-sort {
+            padding: 5px;
+        }
+    } 
+    select.form-control {
+        min-height: 32px;
+        height: 32px;
+        font-size: 12px;
+        padding: 0 8px;  
+        option {
+            padding: 8px;
+        }
+    }
+    .mx-datepicker .btn {
+        padding: 4px 4px 10px 4px;   
+    }
+    input {
+        padding: 6px;
+        padding-left: 8px;
+        padding-right: 8px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+        background-color: #ffffff;
+        color: #000000;
+        text-overflow: ellipsis;
+    }
+    input:hover {
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    input:focus {
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .refresh-container {
+        text-align: right;
+    }
+
+    .WI-section-accordion {
+        padding-left: 16px;
+        border: none;
+
+        .exds-operationContainer-buttons img {
+            width: 24px;
+            height: 24px;
+            margin: 4px;
+        }       
+
+        .widget-accordion-group {
+            h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+                display: inline-block;
+                margin: 0;
+                padding-left: 10px;
+                padding-right:5px;
+            }
+            >.widget-accordion-group-header>.widget-accordion-group-header-button.widget-accordion-group-header-button-icon-left {
+                h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+                    font-size: $exfn-normal-font-size;
+                }
+            }
+            > .widget-accordion-group-header .accordion-header-content {
+                .row {
+                    padding-right: 8px;
+                    .exds-operationContainer-statusIcon {
+                        text-align: right;
+                        padding: 0;
+                        button {
+                            margin-right: 0;
+                        }
+                        img {
+                            margin-right: 8px;
+                        }
+                    }
+                }
+            }         
+        }
+        .WI-step {
+            padding-left: 24px;
+            padding-right: 0;
+
+            .WI-step-content {
+                padding-left: 16px;
+                padding-right: 8px;
+                .row {
+                    margin-right: 0;
+                    padding-top: 3px;
+                }
+                > .row > div {
+                    padding-left: 0;
+                    padding-right: 0;	
+                    li > .mx-dataview > .mx-dataview-content {
+                        > .mx-layoutgrid {
+                            padding-right: 0;
+                            .row > div {
+                                padding-right: 0;
+                            }
+                            .layoutgrid-datacollector-item {
+                                padding-right: 0;
+                                padding-top: 6px;
+                                .cmd-button-container {
+                                    margin-top: -12px;
+                                    &.text, &.bool {
+                                        margin-top: 0;
+                                    }
+                                    button.exds-operationContainer-buttons {
+                                        float: right;
+                                        margin: 0 0px 4px 4px;
+                                    }
+                                    img[src*="indicatorCheckmarkGreen16"] {
+                                        margin-right: 8px
+                                    }
+                                }
+                            }
+                        }                        
+                    }  
+                    &.cmd-button-container {
+                        padding-right: 0;
+                        padding-left: 0;
+                        text-align: right;
+                        .status-indicator-icon {
+                            margin-right: 4px;
+                        }
+                        button {
+                            margin: 4px 0 4px 4px;
+                        }
+                        img[src*="indicatorCheckmarkGreen16"] {
+                            margin-right: 8px
+                        }
+                    }                
+                }
+
+                .WI-buttons-container {
+                    padding-top: 0;
+                    padding-left: 0;
+                    padding-right: 0;
+                    > div {
+                        height: 40px;
+                        padding-left: 0;
+                        padding-right: 0;               
+                        button {
+                            margin-right: 0;
+                        }
+                    }
+                    .WI-confirmation-string {
+                        padding-top: 6px;
+                        padding-bottom: 6px;
+                        span {
+                            font-weight: bold;
+                            color: #1D731C;
+                        }
+                    }
+                }
+            }
+            .datepicker-time {
+                padding-left: 30px;
+            }
+        }
+        .datetime-picker-container {
+            padding: 0;
+            .mx-datepicker { 
+                .mx-compound-control {
+                    display: flex;
+                    flex-flow: column;
+                    button {
+                        padding: 2px 4px 2px 4px;
+                        height: 32px;
+                        span.mx-icon-calendar {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.exfn-WI-actions-container {
+    padding-top: 10px;
+}
+
+.exfn-electronic-signature {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    .electronic-signature-content {
+        display: flex;
+        height: 32px;
+        max-width: 160px;
+        padding: 4px 8px 4px 8px;
+        min-width: 115px;
+        border: 1px solid;
+        margin-left: unset;
+        margin-right: 8px;
+        box-shadow: 0px 1px 2px #0000004D;
+
+        .sign-status {
+            width: 16px;
+            height: 16px;
+            margin-top: 2px;
+            flex-grow: 1;
+    
+            img {
+                height: 16px;
+                width: 16px;
+            }
+
+            .succeded img {
+                filter: invert(36%) sepia(94%) saturate(882%) hue-rotate(80deg) brightness(97%) contrast(108%);
+            }
+            .failed img {
+                filter: invert(8%) sepia(94%) saturate(6469%) hue-rotate(12deg) brightness(114%) contrast(119%);
+            }
+        }
+        .sign-text {
+            flex-grow: 5;
+            margin-left: 4px;
+            flex-wrap: initial;
+            overflow: hidden;
+            p {
+                font-size: 12px;
+                margin-top: 3px;
+            }
+        }
+        .sign-icon {
+            width: 24px;
+            height: 24px;
+            margin-top: 3px;
+            flex-grow: 1;
+
+            img {
+                height: 20px;
+                width: 20px; 
+            }
+        }
+        .sign-icon:not(:disabled) {
+            cursor: pointer;
+        }
+        .sign-counter {
+            flex-grow: 1;
+            width: 32px;
+            max-width: 32px;
+            margin-left: 5px;
+            color: #fff;
+            background-color: #333;
+            padding: 3px 7px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 10px;
+            vertical-align: middle;
+            span {
+                font-size: 12px;
+            }
+        }
+        &.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        &:hover {
+            color: #464646;
+            background-color: #f0f0f0;
+            border-color: #d2d2d2;
+            box-shadow: 0px 3px 6px #0000004D;
+        }
+        &:active {
+            box-shadow: 0px 1px 2px #0000004D;
+        }
+        &:focus {
+            box-shadow: 0px 1px 2px #0000004D;
+        }
+    }
+    &.no-padding-left {
+        padding-left: 0;
+    }
+}
+
+.confirmation-string {
+    span {
+        margin-top: 10px;
+        font-weight: 700;
+        font-size: 12px;
+        color: #1e1e1e;
+    }
+}
+
+.WI-cmd-icon-container {
+    text-align: right;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    img {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+.WI-buttons {
+    margin-top: 5px;
+    text-align: right;
+    button.btn.btn-default, button.btn.btn-primary {
+        height: 32px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font: normal normal normal 12px/17px Open Sans;
+        background-color: #005f87;
+        color: #fff;
+        letter-spacing: 0px;
+    }
+
+    .btn-default {
+        border: 1px solid #DCDCDC;
+        color: #464646;
+    }
+
+    .btn:active, .btn-default:active, .mx-button:active {
+        background-color: #005f87 !important;
+    }
+}
+
+.exfn-electronic-signature-dialog {
+    top: 60px !important;
+    &.modal-dialog .modal-content .modal-body {
+        padding: 16px;
+        max-height: calc(100vh - 140px);
+    }
+    .mx-listview li:last-child {
+        border: none;
+    }
+    .widget-accordion-group {
+        border: none;
+        h5 {
+            color: #5A5A5A;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+        span {
+            font-size: 14px;
+        }
+        .glyphicon {
+            margin-top: 8px;
+            font-size: 24px !important;
+            float: right;
+        }
+        > .widget-accordion-group-header>.widget-accordion-group-header-button {
+            padding: 10px;
+        }
+        >.widget-accordion-group-header>.widget-accordion-group-header-button.widget-accordion-group-header-button-clickable { 
+            background-color: #fff;   
+            > .mx-layoutgrid {
+                padding-left: 0;
+                padding-right: 0;
+                > .row {
+                    margin: 0;
+                    .accordion-arrow {
+                        line-height: 45px;
+                        vertical-align: middle;
+                        a {
+                            color: #111;
+                        }
+                    }
+                }
+            }
+
+        }
+        >.widget-accordion-group-header>.widget-accordion-group-header-button.widget-accordion-group-header-button-clickable:hover { 
+            background-color: #fff;    
+        }
+        .widget-accordion-group-content {
+            background-color: #f0f0f0;
+        }
+        >.widget-accordion-group-content-wrapper>.widget-accordion-group-content {
+            padding: 8px 16px 8px;
+        }
+    }
+
+    .mx-dataview-controls {
+        padding: 0;
+        background-color: #fff;
+        button.btn.btn-default, button.btn.btn-primary {
+            height: 32px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            font: normal normal normal 12px/17px Open Sans;
+            letter-spacing: 0px;
+        }
+
+        .btn-default {
+            border: 1px solid #DCDCDC;
+            color: #464646;
+        }
+
+        button.btn.btn-primary {
+            color: #FFFFFF;
+        }
+    }
+
+    .info-text {
+        margin-bottom: 10px;
+        p {
+            color: #464646;
+            text-align: left;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+
+    .mx-listview li {
+        border: none;
+    }
+
+    .mx-listview li:hover, 
+    .mx-listview li:focus {
+        background-color: #fff;
+    }
+
+    .electronic-signature-swac-container {
+        height: 410px;
+    }
+
+    .accordion-arrow-container {
+        padding: 0;
+    }
+
+    div[aria-expanded="false"] {
+        .accordion-collapsed {
+            display: block;
+        }
+        .accordion-expanded {
+            display: none;
+        }
+    }
+
+    div[aria-expanded="true"] {
+        .accordion-collapsed {
+            display: none;
+        }
+        .accordion-expanded {
+            display: block;
+        }
+    }
+
+    .es-details-container {
+        h4, .h4, h5, .h5, h6, .h6, label {
+            font-size: 14.4px;
+        }
+        .form-control-static {
+            font-size: 12px;
+        }
+        .mx-textbox {
+            input.form-control {
+                height: 32px;
+            } 
+        } 
+        .form-group {
+            margin-bottom: 0;
+        }
+    }
+    .es-accept-reject-container {
+        display: flex;
+        height: 50px;
+        span {
+            font-size: 14.4px;
+            margin-top: 10px;
+            margin-right: 20px;
+        }
+
+    }
+    .es-reject-status {
+        background-color: #f0f0f0;
+        padding-top: 4px;
+        label {
+            padding: 5px;
+            color: #DC0000;
+            text-align: left;
+            font-size: 13.3px;
+            font-style: normal;
+            font-weight: 400;
+            background-color: rgb(251, 238, 237);
+            border: solid 1px rgb(239, 187, 185);      
+            box-shadow: none;
+            display: block;
+            height: 46px;
+            width: 100%;
+        }
+    }
+}
+
+.wi-iframe-content {
+    height:calc(100vh / 2);
+}
+.wi-preview {
+    .wi-preview-pagination-footer {
+        > .row {
+            > div {
+                padding: 0;
+                .buttons-container {
+                    display: flex;
+                    font-size: $exfn-medium-font-size;
+                }
+                .widget-gallery {
+                    .widget-gallery-content {
+                        display: none;
+                        .widget-gallery-content .widget-gallery-item {
+                            width: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

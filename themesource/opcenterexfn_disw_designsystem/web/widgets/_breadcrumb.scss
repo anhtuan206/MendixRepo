@@ -1,0 +1,215 @@
+@import "../_custom-variables.scss";
+
+.breadcrumb {
+    margin-left: 16px;
+    a {
+        font-size: 12px;
+        font-weight: 700;
+        &:last-child {
+            font-weight: normal;
+            color: #1e1e1e;
+            text-decoration: none;
+            cursor: default;
+        }
+    }
+    a + a::before {
+        font-size: 8px;
+    }
+}
+
+.horizontal-wizard-container {
+   height: 34px;
+   margin-bottom: 8px;
+   overflow: hidden;
+   > ul {
+       display: flex;
+       border: none;
+       height: 32px;
+       border-radius: 30px;
+       background-color: $exfn-step-wizard-background-color;
+       > li {
+            flex: auto;
+            text-align: center;
+            border: solid 1px $exfn-step-wizard-border-color;
+            background-color: $exfn-step-wizard-background-color;
+            height: 34px;
+            &:has(.wizard-step-active) {
+                border-color: $exfn-step-wizard-active-background-color;
+            }
+            &:first-child {
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+                border-right: solid 1px $exfn-step-wizard-border-color;
+                .wizard-step { 
+                    border-top-left-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                }
+            }
+            &:last-child {
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+                .wizard-step { 
+                    border-top-right-radius: 30px;
+                    border-bottom-right-radius: 30px;
+                }
+            }
+            .wizard-step {
+                height: 32px;
+                background-color: $exfn-step-wizard-background-color;
+                &.wizard-step-active {
+                    background-color: $exfn-step-wizard-active-background-color;
+                    a {
+                        color: #fff;
+                    }
+                }
+                &.wizard-step-completed {
+                    a {
+                        color: $exfn-step-wizard-active-background-color;
+                        font-weight: 700;
+                    }
+                }
+                &:not(.wizard-step-active):hover {
+                    background-color: $exfn-hover-background-color;
+                    &:before {
+                        border-color: transparent transparent transparent $exfn-hover-background-color;
+                    }
+                }
+            }
+            a {
+                height: 32px;
+                font-size: $exfn-normal-font-size;
+                color: #464646;
+                word-break: break-all;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                &:hover, &:active, &:focus {
+                    text-decoration: none;
+                }
+            }
+            &:not(:last-child) div.wizard-step:after, &:not(:last-child) div.wizard-step:before {
+                content:"";
+                display:inline-block;        
+                border-width: 16px;
+                border-style: solid;
+                width: 0;
+                height: 0;
+                left: 100%;
+                top: 0;        
+                position: absolute;        
+                z-index: 1;
+            }
+            &:not(:last-child) {
+                div.wizard-step:after, &:hover div.wizard-step:before {
+                    border-color: transparent transparent transparent $exfn-step-wizard-border-color;
+                } 
+                div.wizard-step.wizard-step-active:after, &:hover div.wizard-step.wizard-step-active:before {
+                    border-color: transparent transparent transparent $exfn-step-wizard-active-background-color;
+                }
+                div.wizard-step:before, div.wizard-step.wizard-step-completed:before {
+                    border-width: 16px;
+                    display: block;
+                    border-color: transparent transparent transparent $exfn-step-wizard-background-color;
+                    z-index: 2;
+                    left: calc(100% - 1px);
+                }
+                div.wizard-step.wizard-step-active:before {
+                    border-color: transparent transparent transparent $exfn-step-wizard-active-background-color;
+                }
+                &:hover {
+                    background-color: $exfn-hover-background-color;
+                    div.wizard-step:before {
+                        border-color: transparent transparent transparent $exfn-hover-background-color;
+                    }
+                }
+            }
+            &:first-child { 
+                div.wizard-step:before, div.wizard-step.wizard-step-completed:before {
+                    left: 100%;
+                }
+            }
+        }
+    }    
+}
+
+/* Customized breadcrumb element for engineer details page */
+.details-page-breadcrumb-container {
+    display: flex;
+    padding: 0 0 6px 0;
+
+    .breadcrumb {
+        a {
+            &:last-child {
+                font-weight: 700;
+                color: #005f87;
+                cursor: pointer;
+            }
+        }
+        &.not-link {
+            margin-left: 0;
+            a {
+                &:last-child {
+                    font-weight: 500;
+                    color: #464646;
+                    cursor: none;
+                }
+            }
+        }
+    }
+
+    > .form-group.no-columns {
+        flex: 1;
+        width: auto;
+        max-width: 50%;
+        padding-top: 5.5px;
+        padding-left: 5px;
+        margin: 0;
+        .exfn-select {
+            border: none;
+            display: flex;
+
+            &:before {
+                content: "";
+                display:block;
+                height:8px;
+                width:8px;
+                background-size: 8px 8px;
+                background-image: url('data:image/svg+xml,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve"><polygon class="aw-theme-iconOutline" fill="%23464646" points="5.9,15.9 5.1,15.1 12.3,8 5.1,0.9 5.9,0.1 13.7,8 "/></svg>');
+                background-repeat: no-repeat;
+                margin-top: 12px;
+                margin-left: 4px;
+            }
+
+            &:has(.exfn-select-dropdown.open):before {
+                transform: rotate(90deg);
+            }
+
+            .exfn-select-dropdown.open {
+                max-height: 60vh;
+                margin-left: 20px;
+                .exfn-select-list.paginated-container {
+                    max-height: calc(60vh - 250px);
+                }
+            }
+
+            .exfn-select-trigger {
+                width: 100%;
+                .exfn-select-value {
+                    color: #1e1e1e;
+                    font-weight: 700;
+                    color: #005f87;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+                svg {     
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.asBuilt-page {
+    .details-page-breadcrumb-container {
+        padding: 0;
+    }
+}

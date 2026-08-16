@@ -1,0 +1,108 @@
+@mixin vertical-center {
+    margin: 0;
+    position: relative;
+    top: 50%; //center element vertically
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.vertical-center {
+    @include vertical-center;
+}
+
+@mixin normal-font {
+    color: #1E1E1E;
+    text-align: left;
+    text-decoration: none;
+    font-family: 'Segoe UI', Arial;
+    font-size: 9.0pt;
+    font-style: normal;
+    font-weight: 400;
+    text-shadow: none;
+    padding-left: 4px;
+}
+
+@mixin bold-font {
+    @include normal-font();
+    font-weight: 600;
+}
+
+@mixin show-ellipses-after-rows($noOfRows){
+     display: -webkit-box;
+    -webkit-line-clamp: $noOfRows;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-all;
+    text-overflow: ellipsis;
+}
+@mixin reset{
+    position: initial;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    padding: 0px;
+    border: none;
+    margin: 0px;
+}
+
+* {
+    font-family: Segoe UI, Open Sans, Helvetica Neue, Verdana, Arial, YU Gothic UI, MS PGothic, Hiragino Sans, Microsoft YaHei, \5fae\8f6f\96c5\9ed1, STXihei, \534e\6587\7ec6\9ed1, sans-serif;
+}
+
+/* LOADER */
+.mx-progress.mx-progress-empty {
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.mx-progress.mx-progress-empty .mx-progress-message {
+    background-color: #e6e6e6;
+    margin-bottom: 0px;
+}
+
+.mx-progress.mx-progress-empty .mx-progress-message {
+    height: 4px;
+}
+
+.mx-progress.mx-progress-empty .mx-progress-indicator:before,
+.mx-progress.mx-progress-empty .mx-progress-indicator:after {
+    background-color: initial;
+    width: 10%;
+    background-image: linear-gradient(90deg, #2387aa 0, #2387aa 0);
+    animation: loading 2s cubic-bezier(.1, .85, .9, .15) infinite, loading-opacity 2s ease-in-out infinite alternate;
+    transform: initial;
+    background-repeat: no-repeat;
+    z-index: 99999;
+}
+
+@keyframes loading-opacity {
+    0% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes loading {
+    0% {
+        left: 0
+    }
+
+    to {
+        left: 100%
+    }
+}
+
+.hidden-element{
+    visibility: hidden;
+    height: 0px;
+}

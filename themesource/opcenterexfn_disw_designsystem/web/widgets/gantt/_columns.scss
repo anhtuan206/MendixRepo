@@ -1,0 +1,32 @@
+.s-header-columns {
+  .s-header-text {
+    cursor: pointer;
+    flex: 2;
+  }
+}
+
+.s-sort-icon {
+  margin: 0 10px;
+  cursor: pointer;
+
+  svg {
+    position: relative;
+    top: 1px;
+    height: 14px;
+    opacity: 0;
+    transition: opacity .1s ease-in-out, transform .2s ease-in-out;
+  }
+
+  &.s-sort-desc {
+    svg {
+      opacity: 1;
+    }
+  }
+
+  &.s-sort-asc {
+    svg {
+      opacity: 1;
+      transform: rotate(180deg);
+    }
+  }
+}

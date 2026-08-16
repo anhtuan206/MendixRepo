@@ -1,0 +1,142 @@
+@import '../../../../../theme/web/custom-variables';
+
+
+.operation-tiles-container {
+    padding: 2px;
+    border: 1px solid #DFDFDF;
+    border-radius: 3px;
+    margin: 2px;
+    height: 100%; 
+    overflow: hidden;
+        
+    .header {
+        padding: 4px 4px 4px 4px;
+        display: flex;
+        height: 46px;
+
+        .header-title {
+            margin-top: auto; 
+            margin-bottom:auto;
+            margin-left: 5px;
+        }
+    }
+    .header-badge{
+        padding:0px;
+        right: 12px;
+        top: 5px;
+        text-align: center;
+        background-color: rgb(50, 150, 185);
+        color: rgb(255, 255, 255);
+        height: 20px;
+        font-size: 10px;
+        line-height: 18px;
+    }
+    .widget-gallery {
+        height: calc(100% - 46px);
+    }
+    .widget-gallery-items {
+        height: 100%;
+        grid-gap: 0px;
+        grid-template-rows: repeat(auto-fill, 74px);
+
+        .widget-gallery-item {
+            padding: 0px 0px 0px 0px !important;
+            border: 1px solid #d9d9d9;
+            border-bottom: none;
+            &:last-child {
+                border-bottom: 1px solid #d9d9d9;
+            }
+         }
+        .row-container {
+            display: grid;
+            grid-template-columns: 60px 1fr 60px;
+            grid-template-rows: repeat(2, 1fr);
+            height: 72px;
+            
+            border-bottom: none;
+            padding-left: 2px;
+            text-align: start;
+            
+            .result-icon-container {
+                grid-row: 1/3;
+                text-align: center;
+                border: 2px solid;
+                border-radius: 100%;
+                padding: 4px;
+                margin: auto;
+                height: 44px;
+                width: 44px;
+            }
+            .result-no-icon-container {
+                grid-row: 1/3;
+                text-align: center;
+                padding: 4px;
+                margin: auto;
+                height: 44px;
+                width: 44px;
+            }
+            .title-container, .description-container, .ot-tile-description-value {
+                margin: auto 0px;
+                padding-left: 2px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+
+                .mx-text {
+                    white-space: nowrap;
+                }
+            }
+            .title-container {
+                @include ot-header;
+            }
+            .description-container {
+                font-size: 1.35rem;
+            }
+            .ot-tile-description {
+                @include ot-operation-details
+            }
+           
+            .buttons {
+                grid-column: 3;
+                grid-row: 1/3;
+                margin: auto;                
+                a {
+                    height: 100%;
+                    padding: 0px;
+                    display: block;
+                    text-align: center;
+                    
+                    > img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+
+            &.ko-result{
+                background-color: #FCEFED;
+                .result-icon-container {
+                    border-color: #DC0000;
+                    img {
+                        -webkit-filter: invert(16%) sepia(71%) saturate(7148%) hue-rotate(358deg) brightness(82%) contrast(114%);
+                        filter: invert(16%) sepia(71%) saturate(7148%) hue-rotate(358deg) brightness(82%) contrast(114%);
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+            }
+            &.ok-result {
+                background-color: #EDFCF5;
+                .result-icon-container {
+                    border-color: #0A9B00;
+                    img {
+                        -webkit-filter: invert(36%) sepia(28%) saturate(6824%) hue-rotate(85deg) brightness(101%) contrast(103%);
+                        filter: invert(36%) sepia(28%) saturate(6824%) hue-rotate(85deg) brightness(101%) contrast(103%);
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+            } 
+        }
+    }
+}

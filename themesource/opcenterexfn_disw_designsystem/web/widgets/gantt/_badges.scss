@@ -1,0 +1,18 @@
+.s-badge {
+  display: inline-block;
+  border: 2px solid var(--chip-border-color);
+  background: #fff;
+  border-radius: 10px;
+  margin: 0 5px 5px 0;
+  padding: 3px 7px;
+  color: #333;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+
+  &.s-selected {
+    filter: brightness(1.1);
+    box-shadow: 0 3px 3px rgba(0,0,0,.15);
+    outline: 2px solid orange;
+  }
+}
